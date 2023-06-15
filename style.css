@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+:root{
+  --dark-clr: #24232c;
+  --bg-clr: #18171f;
+  --dark-gray: #817D92;
+  --light-gray: #e6e5ea;
+  --green-clr: #a4ffaf;
+  --red-clr: #f64a4a;
+  --orang-clr: #f87c58;
+  --yellow-clr: #f8cd65;
+}
+/* general rules */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--light-gray);
+}
+body{
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+  font-family: 'JetBrains Mono', monospace;
+  min-height: 100vh;
+  background-color: var(--bg-clr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1{
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 43px;
+}
+h2{
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31.68px;
+}
+ul{
+  list-style: none;
+}
+
+.length-indecator {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-right: 15px;
+  width: 200px;
+  height: 7px;
+  background: linear-gradient( var(--bg-clr) 60%,  var(--bg-clr) 60%);
+  border-radius: 5px;
+}
+/* Input Thumb */
+.length-indecator::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--light-gray);
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+.length-indecator::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--light-gray);
+  cursor: pointer;
+}
+.length-indecator::-ms-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--light-gray);
+  cursor: pointer;
+}
+.length-indecator::-webkit-slider-thumb:hover {
+  background: #24232c;
+  border: 2px solid #a4ffaf;
+}
+.length-indecator::-moz-range-thumb:hover {
+  background: #24232c;
+  border: 2px solid #a4ffaf;
+}
+.length-indecator::-ms-thumb:hover {
+  background: #24232c;
+  border: 2px solid #a4ffaf;
+}
+
+/* common rules */
+.title,
+.password-box,
+.settings{
+  padding: 0 20px;
+  width: 540px;
+}
+.password-box,
+.settings{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.password-box,
+.settings .character{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.settings .length-indecator,
+.options ul li,
+.options .password-strength,
+.options .generate-btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.copy-icon:hover{
+  cursor: pointer;
+}
+.copy-icon .copied{
+  color: var(--green-clr);
+  margin-right: 10px;
+}
+.copy-icon:hover svg path{
+  fill: var(--light-gray);
+}
+/* ============================================== */
+
+.title{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.password-box,.settings{
+  background-color: var(--dark-clr);
+}
+.password-box{
+  margin-bottom: 20px;
+}
+.password-box .generated-password.no-pass,
+.password-box .generated-password.no-options,
+.password-box .generated-password.short-pass{
+  font-size: 23px;
+  line-height: 35px;
+}
+
+.settings .character .char-count output{
+  color: var(--green-clr);
+}
+.settings .length-indecator{
+  width: 100%;
+}
+.options ul li{
+  position: relative;
+}
+.options ul li input[type="checkbox"]{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg-clr); 
+  border: 3px solid #e6e5ea;
+  position: relative;
+  cursor: pointer;
+}
+.options ul li input[type="checkbox"]:hover{
+  border: 3px solid var(--green-clr);
+}
+.options ul li input[type="checkbox"]:checked{
+  border: none;
+  background-color: var(--green-clr); 
+}
+.options ul li svg{
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  z-index: 2;
+}
+
+.options .password-strength{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  padding: 20px;
+  background-color: var(--bg-clr);
+}
+.options .password-strength p{
+  color: var(--dark-gray);
+}
+.options .password-strength .strength-lvl {
+  display: flex;
+}
+.options .password-strength .strength-lvl .pass-indicator{
+  margin-right: 10px;
+}
+.options .password-strength .strength-lvl span{
+  width: 10px;
+  height: 28px;
+  background-color: unset;
+  border: 2px solid var(--light-gray);
+  margin-left: 5px;
+}
+.options .generate-btn{
+  height: 65px;
+  width: 100%;
+  background-color: var(--green-clr);
+  color: var(--bg-clr);
+  text-transform: uppercase;
+}
+.options .generate-btn:hover{
+  background-color: unset;
+  color: var(--green-clr);
+  border: 2px solid var(--green-clr);
+  cursor: pointer;
+}
+.options .generate-btn:hover svg path{
+  fill: var(--green-clr);
+}
+
+/* Strength indecator */
+.password-strength .strength-lvl.too-weak span:nth-child(2){
+  background-color: var(--red-clr);
+  border: none;
+}
+.password-strength .strength-lvl.weak span:nth-child(2),
+.password-strength .strength-lvl.weak span:nth-child(3){
+  background-color: var(--orang-clr);
+  border: none;
+}
+.password-strength .strength-lvl.medium span:nth-child(2),
+.password-strength .strength-lvl.medium span:nth-child(3),
+.password-strength .strength-lvl.medium span:nth-child(4){
+  background-color: var(--yellow-clr);
+  border: none;
+}
+.password-strength .strength-lvl.strong span:nth-child(2),
+.password-strength .strength-lvl.strong span:nth-child(3),
+.password-strength .strength-lvl.strong span:nth-child(4),
+.password-strength .strength-lvl.strong span:nth-child(5){
+  background-color: var(--green-clr);
+  border: none;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+  body{
+    font-size: 16px;
+    line-height: 21.12px;
+  }
+  h1{
+    font-size: 24px;
+    line-height: 31.68px;
+  }
+  h2{
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .title,
+  .password-box,
+  .settings{
+    width: 343px;
+  }
+  .password-box .generated-password.no-pass,
+  .password-box .generated-password.no-options,
+  .password-box .generated-password.short-pass{
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1200px){
+  body{
+    font-size: 18px;
+    line-height: 23px;
+  }
+  h1{
+    font-size: 32px;
+    line-height: 42px;
+  }
+  h2{
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .password-box .generated-password.no-pass,
+  .password-box .generated-password.no-options,
+  .password-box .generated-password.short-pass{
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
